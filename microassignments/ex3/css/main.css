@@ -1,0 +1,7 @@
+.absolute, .relative {
+	display: block;
+}
+
+#x-abs, #y-abs, #x-rel, #y-rel {
+	height: 50px;
+}
