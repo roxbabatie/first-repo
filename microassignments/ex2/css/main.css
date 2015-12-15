@@ -1,0 +1,14 @@
+
+#rating {
+	margin-top: 50px;
+
+}
+.star {
+	color: gray;
+	cursor: pointer;
+	font-size: 30px;
+	display: inline-block;
+}
+.star.active {
+	color: red;
+}
