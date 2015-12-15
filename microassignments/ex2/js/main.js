@@ -6,13 +6,14 @@ for (var i = 0; i < stars.length; i++) {
 
 		star.addEventListener("mouseover", function() {
 				var counting = this.getAttribute("data-value");
-				theCounting.value = counting;
+				theCounting.innerHTML = counting;
 
 				var length = parseInt(counting, 10);
 
 				for (var j = 0; j < length; j++) {
 					stars[j].classList.add('active');
 				};
+
 		});
 
 		star.addEventListener("mouseout", function (){
