@@ -1,0 +1,34 @@
+#container .ok {
+	width: 100px;
+	height: 30px;
+	background-color: green;
+	text-transform: uppercase;
+	font-size: 18px;
+	text-align: center;
+	line-height: 30px;
+	margin: 10px;
+	display: none;
+}
+
+#container .not-ok {
+	width: 100px;
+	height: 30px;
+	background-color: red;
+	text-transform: uppercase;
+	font-size: 18px;
+	text-align: center;
+	line-height: 30px;
+	margin: 10px;
+	display: inline-block;
+}
+#container.valid .not-ok {
+	display: none;
+}
+#container.valid .ok{
+	display: inline-block;
+}
+
+input {
+	width: 200px;
+	height: 30px;
+}
