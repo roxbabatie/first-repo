@@ -2,7 +2,7 @@ var chat = document.getElementById("chat-window");
 var form = document.getElementById("form");
 var message = document.getElementById("message");
 var send = document.getElementById("btn");
-var contentMsg,
+var contentMsg;
 var	newMsg;
 
 form.addEventListener("submit", function(event) {
