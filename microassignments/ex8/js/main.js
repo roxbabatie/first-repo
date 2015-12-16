@@ -37,13 +37,3 @@ selectOperator.addEventListener("change", function(event) {
 
 
 
-
-
-
-console.log(selectOperator);
-var add = document.getElementById("op-add");
-var substract = document.getElementById("op-substract");
-var multiply = document.getElementById("op-multiply");
-var divide = document.getElementById("op-divide");
-
-
