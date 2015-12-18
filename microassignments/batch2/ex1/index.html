@@ -4,10 +4,12 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-    <div>
-        <a href="#">Add new row</a>
-    </div>
-    <table>
+    <script type="text/html" id="tpl">
+        <td><input /></td>
+        <td><input type="email" /></td>
+        <td><a class="add-btn" href="#">Add new row</a></td>
+    </script>
+    <table id="the-table">
         <thead>
             <tr>
                 <th>Name</th>
@@ -19,29 +21,12 @@
             <tr>
                 <td><input /></td>
                 <td><input type="email" /></td>
-                <th>...</th>
+                <td><a class="add-btn" href="#">Add new row</a></td>
             </tr>
         </tbody>
     </table>
-    <!--<div id="containe"r>-->
-        <!--<h1>Invited People</h1>-->
-        <!--<table id="table">-->
-            <!--<thead>-->
-            <!--<tr>-->
-                <!--<th>Name</th>-->
-                <!--<th>Email</th>-->
-                <!--<th>Action</th>-->
-            <!--</tr>-->
-            <!--</thead>-->
-            <!--<tbody>-->
-            <!--<tr>-->
-                <!--<td><input type="text" value="Vlad" /></td>-->
-                <!--<td><input type="text" value="vlad@godev.ro" /></td>-->
-                <!--<td><a id="add" href = "#">Add another</a></td>-->
-            <!--</tr>-->
-            <!--</tbody>-->
-        <!--</table>-->
-    <!--</div>-->
+   
+    <script src="js/template-engine.js"> </script>
     <script src="js/main.js"> </script>
 </body>
 </html>
