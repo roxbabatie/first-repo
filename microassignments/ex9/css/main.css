@@ -2,3 +2,31 @@
 	width: 200px;
 	display: inline-block;
 }
+
+#container.over .selects{
+	display:none;
+}
+
+#container.under .selects{
+	display:none;
+}
+#container.under {
+	display: block;
+	height: 400px;
+	background-color: pink;
+	text-align: center;
+	font-size: 60px;
+	font-weight: bold;
+	line-heigth: 400px;
+}
+
+#container.over {
+	display: block;
+	height: 400px;
+	background-color: black;
+	text-align: center;
+	font-size: 60px;
+	font-weight: bold;
+	line-heigth: 400px;
+	color: white;
+}
