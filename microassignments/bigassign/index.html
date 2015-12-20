@@ -8,6 +8,7 @@
 <script type="text/html" id="tpl">
     <td><%=name%></td>
     <td><%=city%></td>
+    <td><%=stars%>/5</td>
 </script>
     <div class="container">
         <div class="col-md-3 top-buffer">
@@ -21,18 +22,21 @@
                 </div>
                 <div class="row">
                     <div class="form-group">
-                        <label for="city">City</label>
+                        <label for="city">City visited</label>
                         <input type="text" class="form-control" id="city" />
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group">
                         <label class="star-rating">Rating</label>
-                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        <ol id="rating">
+                            <li class="glyphicon glyphicon-star star" data-value="1" aria-hidden="true"></li>
+                            <li class="glyphicon glyphicon-star star" data-value="2" aria-hidden="true"></li>
+                            <li class="glyphicon glyphicon-star star" data-value="3" aria-hidden="true"></li>
+                            <li class="glyphicon glyphicon-star star" data-value="4" aria-hidden="true"></li>
+                            <li class="glyphicon glyphicon-star star" data-value="5" aria-hidden="true"></li>
+                        </ol>
+                        <span id="counter">0</span>
                     </div>
                 </div>
                 <div class="row">
