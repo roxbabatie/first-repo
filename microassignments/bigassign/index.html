@@ -1,0 +1,62 @@
+<!DOCTYPE>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="col-md-3 top-buffer">
+            <form>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" />
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" class="form-control" id="city" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label class="star-rating">Rating</label>
+                        <span class="glyphicon glyphicon-star" aria-hidden="false"></span>
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="checkbox">
+                        <label><input type="checkbox">More than a weekend</label>
+                    </div>
+                 </div>
+                <div class="row">
+                    <button type="submit" class="btn btn-default">Add!</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4 col-md-offset-2 top-buffer">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>City</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="js/template-engine.js"> </script>
+    <script src="js/main.js"> </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</body>
+</html>

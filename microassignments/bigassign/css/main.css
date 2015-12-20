@@ -1,0 +1,11 @@
+.star-rating{
+    display: block;
+}
+
+thead {
+    background-color: gray;
+}
+
+.top-buffer {
+    margin-top: 50px;
+}
