@@ -4,7 +4,15 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-
+<form>
+		<label> R </label>
+		<input id="red" type="range" name="Range" min="0" max="255" value="0" oninput="this.form.noInput.value=this.value" />
+		<input type="number" name="noInput" min="0" max="255" value="0" oninput="this.form.Range.value=this.value" />
+		<label> G </label>
+		<input id="green" type="range" min="0" max="255" />
+		<label> B </label>
+		<input id="blue" type="range" min="0" max="255" />
+</form>
 		<script src="js/main.js"></script>
 </body>
 </html>

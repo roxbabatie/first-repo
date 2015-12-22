@@ -11,6 +11,5 @@ var listener = function () {
 };
 
 
-
 button = document.getElementById("btn");
 button.addEventListener("click", listener);

@@ -1,12 +1,13 @@
 body {
     font-family: sans-serif;
-    font-size: 16px;
+    font-size: 14px;
 }
 .star-rating{
     display: block;
 }
 thead {
     background-color: #e3e2e1;
+    font-size: 14px;
 }
 .top-buffer {
     margin-top: 50px;
@@ -32,4 +33,7 @@ thead {
 }
 #calc {
 
+}
+#map {
+    height: 300px;
 }

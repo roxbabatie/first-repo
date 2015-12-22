@@ -1,0 +1,47 @@
+label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+input {
+	margin-bottom: 10px;
+	border: 1px solid black;
+	width: 200px;
+}
+
+#message-box {
+
+	width: 300px;
+	padding-bottom: 170px;
+}
+
+#btn {
+	display: block;
+	width: 100px;
+	background-color: green;
+	text-transform: uppercase;
+	font-size: 20px;
+	text-align: center;
+
+}
+#agree-check {
+	display: inline-block;
+	width: 20px;
+}
+#agree-label {
+	display: inline-block;
+	margin-bottom: 30px;
+}
+
+#mail {
+	display: block;
+}
+
+.left{
+	width: 20%;
+	float: left;
+}
+
+.container{
+	margin-top: 20px;
+}
