@@ -9,6 +9,9 @@ thead {
     background-color: #e3e2e1;
     font-size: 14px;
 }
+tbody {
+    font-size:14px
+}
 .top-buffer {
     margin-top: 50px;
 }
@@ -27,12 +30,6 @@ thead {
 }
 #errors {
     color: red;
-}
-#count {
-
-}
-#calc {
-
 }
 #map {
     height: 300px;

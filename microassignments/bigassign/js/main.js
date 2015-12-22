@@ -1,14 +1,14 @@
 var myForm = document.getElementById("my-form");
 var myTable = document.getElementById("my-table");
 var tableBody = myTable.getElementsByTagName("tbody")[0];
-
 var stars = document.getElementsByClassName('star');
-var theCounting = document.getElementById('counter');
-var length;
-
+var theCounting = document.getElementById('counter-stars');
 var count = document.getElementById("count");
-
+var length;
 var store = [];
+var geocoder;
+var map;
+var markers = [];
 
 for (var i = 0; i < stars.length; i++) {
     var star = stars[i];
@@ -25,8 +25,8 @@ for (var i = 0; i < stars.length; i++) {
     });
 }
 
-function getValues(form) {
-    var inputs = form.getElementsByTagName("input");
+function getValues() {
+    var inputs = myForm.getElementsByTagName("input");
     var name = inputs[0].value;
     var city = inputs[1].value;
     return {
@@ -35,6 +35,7 @@ function getValues(form) {
         stars: length
     };
 }
+
 function createRow(formData) {
     var tr = document.createElement("tr");
     tr.innerHTML = tmpl("tpl", formData);
@@ -48,19 +49,18 @@ function isValidName(name) {
 function isValid(ok) {
     var name = document.getElementById("name").value;
     var validName = isValidName(name);
-    var data = getValues(myForm);
+    var data = getValues();
     if (ok && validName) {
+        myForm.reset();
+        myForm.name.focus();
+        store.push(data);
+        render();
         for (var j = 0; j < length; j++) {
             stars[j].classList.remove('active');
         }
-        //createRow(data);
-        myForm.reset();
-        store.push(data);
-        //console.log(store);
-        render();
-
-
-    } else {
+        length = 0;
+    }
+    else {
         if (!ok && !validName) {
             errMsg("Bad name and bad city");
         } else if (!ok) {
@@ -70,6 +70,7 @@ function isValid(ok) {
         }
     }
 }
+
 myForm.addEventListener("submit", function (event) {
     event.preventDefault();
     isValidCity();
@@ -85,8 +86,7 @@ function errMsg(msg) {
     div.innerHTML = msg;
     myForm.appendChild(div);
 }
-var geocoder;
-var map;
+
 function initialize() {
     geocoder = new google.maps.Geocoder();
     var latlng = new google.maps.LatLng(44.270, 26.100);
@@ -96,7 +96,9 @@ function initialize() {
     }
     map = new google.maps.Map(document.getElementById("map"), mapOptions);
 }
+
 initialize();
+
 function isValidCity() {
     var geocoder = new google.maps.Geocoder();
     var city = document.getElementById("city").value;
@@ -112,7 +114,7 @@ function isValidCity() {
         }
     });
 }
-var markers = [];
+
 function addMarker(location) {
     var marker = new google.maps.Marker({
         position: location,
@@ -120,32 +122,32 @@ function addMarker(location) {
     });
     markers.push(marker);
 }
+
 tableBody.addEventListener("click", function (event) {
     if (isRemoveBtn(event.target)) {
-        removeRow(event.target);
+        removeRowandMarker(event.target);
     }
 });
 
-
-var isRemoveBtn = function (target) {
+function isRemoveBtn(target) {
     return target.classList.contains("remove-btn");
 }
 
-var updateTotal = function () {
+function updateTotal() {
     count.innerHTML = store.length;
-
     if (store.length != 0) {
         var sum = 0;
         for (var i=0; i < store.length; i++) {
             sum += store[i].stars;
         }
         calc.innerHTML = Math.ceil(sum/store.length) + "/5";
-    } else {
+    }
+    else {
         calc.innerHTML = "0";
     }
 }
 
-var getIndexOfButton = function (target) {
+function getIndexOfButton(target) {
     var tr = target.parentNode.parentNode;
     var allTrs = tableBody.getElementsByTagName('tr');
     allTrs = [].slice.call(allTrs);
@@ -153,15 +155,13 @@ var getIndexOfButton = function (target) {
     return index;
 }
 
-var removeRow = function (target) {
+function removeRowandMarker(target) {
     var index = getIndexOfButton (target);
     store.splice(index, 1);
     setMapOnAll(null);
     markers.splice(index, 1);
     setMapOnAll(map);
-    //removeFromStore(index);
     render();
-
 }
 
 function setMapOnAll(map) {
@@ -170,16 +170,11 @@ function setMapOnAll(map) {
     }
 }
 
-//var removeFromStore = function (index) {
-//    store.splice(index, 1);
-//}
-
 var populateTable = function () {
     tableBody.innerHTML = '';
     for (var i = 0; i < store.length; i++) {
         var data = store[i];
         createRow(data);
-
     }
 }
 var render = function () {
