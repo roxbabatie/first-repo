@@ -22,6 +22,9 @@ tbody {
 .star.active {
     color: red;
 }
+.star.active-click{
+    color: red;
+}
 #counter {
     display: none;
 }
